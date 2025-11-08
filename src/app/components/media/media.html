@@ -1,0 +1,27 @@
+<div class="card h-100">
+  <div class="card-header">
+    <h3 class="h5 mb-0">Multimedia</h3>
+  </div>
+
+  <div class="card-body" *ngIf="player; else noMedia">
+    <p class="mb-2">
+      Vídeo de: <strong>{{ player.nombre }} {{ player.apellidos }}</strong>
+    </p>
+
+    <div class="ratio ratio-16x9" *ngIf="player.videoUrl">
+      <iframe
+        [src]="player.videoUrl | safeUrl"
+        title="Vídeo del jugador"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+  <ng-template #noMedia>
+    <div class="card-body">
+      <p class="text-muted mb-0">
+        Selecciona un jugador para ver su vídeo destacado.
+      </p>
+    </div>
+  </ng-template>
+</div>

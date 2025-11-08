@@ -1,0 +1,28 @@
+<div class="card h-100">
+  <div class="card-header">
+    <h3 class="h5 mb-0">Detalle del jugador</h3>
+  </div>
+
+  <div class="card-body" *ngIf="player; else noPlayer">
+    <div class="text-center mb-3" *ngIf="player.photoUrl">
+      <img
+        [src]="player.photoUrl"
+        [alt]="player.nombre + ' ' + player.apellidos"
+        class="img-fluid rounded detail-photo"
+      />
+    </div>
+
+    <p><strong>Nombre:</strong> {{ player.nombre }} {{ player.apellidos }}</p>
+    <p><strong>Posición:</strong> {{ player.posicion }}</p>
+    <p><strong>Edad:</strong> {{ player.edad }} años</p>
+    <p><strong>Altura:</strong> {{ player.altura }} cm</p>
+  </div>
+
+  <ng-template #noPlayer>
+    <div class="card-body">
+      <p class="text-muted mb-0">
+        Selecciona un jugador de la lista para ver su ficha.
+      </p>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,140 @@
+// Paleta
+$primary: #d4001f;      // rojo tipo Bulls
+$primary-soft: #fef2f2;
+$header-bg: #050509;
+$bg-body: #f5f5f7;
+$text-dark: #111827;
+$text-muted: #6b7280;
+
+// Fondo general
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: $bg-body;
+}
+
+// HEADER
+.store-header {
+  background: $header-bg;
+  color: white;
+  border-bottom: 1px solid rgba(75, 85, 99, 0.7);
+}
+
+.store-logo-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.store-brand-name {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.95rem;
+}
+
+.store-brand-subtitle {
+  font-size: 0.75rem;
+  color: rgba(209, 213, 219, 0.9);
+}
+
+// Menú
+.store-nav-btn {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.4rem 1.1rem;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.2s ease;
+}
+
+.store-nav-btn:hover {
+  border-color: rgba(156, 163, 175, 0.7);
+  background: rgba(31, 41, 55, 0.8);
+}
+
+.store-nav-btn.active {
+  background: white;
+  color: $header-bg;
+  border-color: white;
+}
+
+// MAIN
+.store-main {
+  padding-bottom: 2rem;
+}
+
+// HOME
+.home-section {
+  color: $text-dark;
+
+  .home-title {
+    font-weight: 700;
+  }
+}
+
+.hero-card {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  min-height: 230px;
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8)),
+    url('https://images.pexels.com/photos/1103831/pexels-photo-1103831.jpeg?auto=compress&cs=tinysrgb&w=800');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(212, 0, 31, 0.45), transparent 60%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-weight: 600;
+}
+
+// PÁGINA JUGADORES
+.players-page-title {
+  font-weight: 700;
+  color: $text-dark;
+}
+
+.players-page {
+  color: $text-dark;
+}
+
+.players-chips .chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: $primary-soft;
+  color: $primary;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
