@@ -6,7 +6,7 @@ export interface Player {
   edad: number;
   altura: number;      // en cm
   videoUrl: string;
-  photoUrl: string;    // <-- NUEVO
+  photoUrl: string;    
 }
 
 
@@ -19,8 +19,8 @@ export const PLAYERS: Player[] = [
     posicion: 'Base',
     edad: 25,
     altura: 183,
-    videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_1',
-    photoUrl: 'https://images.pexels.com/photos/1103829/pexels-photo-1103829.jpeg?auto=compress&cs=tinysrgb&w=400'
+    videoUrl: 'https://www.youtube.com/embed/T4R9Jc96rtQ?si=HPbuvXDTVJcPdfpC',
+    photoUrl: 'https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 2,
@@ -29,8 +29,8 @@ export const PLAYERS: Player[] = [
     posicion: 'Escolta',
     edad: 27,
     altura: 189,
-    videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_2',
-    photoUrl: 'https://images.pexels.com/photos/1103832/pexels-photo-1103832.jpeg?auto=compress&cs=tinysrgb&w=400'
+    videoUrl: 'https://www.youtube.com/embed/iYtbvKqImlA?si=N7H7HY369fk5TXbT',
+    photoUrl: 'https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ export const PLAYERS: Player[] = [
     posicion: 'Alero',
     edad: 24,
     altura: 195,
-    videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_3',
+    videoUrl: 'https://www.youtube.com/embed/nLMq9DLvDxc?si=cnjcLmiKNS0sm2Ip',
     photoUrl: 'https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
@@ -49,8 +49,8 @@ export const PLAYERS: Player[] = [
     posicion: 'Ala-Pívot',
     edad: 29,
     altura: 201,
-    videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_4',
-    photoUrl: 'https://images.pexels.com/photos/1103833/pexels-photo-1103833.jpeg?auto=compress&cs=tinysrgb&w=400'
+    videoUrl: 'https://www.youtube.com/embed/CXLM08fZO5o?si=2eWPylRzkXtcCy91',
+    photoUrl: 'https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&w=400'
   },
   {
     id: 5,
@@ -59,7 +59,17 @@ export const PLAYERS: Player[] = [
     posicion: 'Pívot',
     edad: 30,
     altura: 208,
-    videoUrl: 'https://www.youtube.com/embed/VIDEO_ID_5',
-    photoUrl: 'https://images.pexels.com/photos/159905/basketball-dunk-basket-slam-dunk-159905.jpeg?auto=compress&cs=tinysrgb&w=400'
+    videoUrl: 'https://www.youtube.com/embed/P8RIY4hiO2M?si=zNHMQ99qNLzEYF1B',
+    photoUrl: 'https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&w=400'
+  },
+  {
+    id: 6,
+    nombre: 'Michael',
+    apellidos: 'Jordan',
+    posicion: 'Pívot',
+    edad: 45,
+    altura: 210,
+    videoUrl: 'https://www.youtube.com/embed/P8RIY4hiO2M?si=zNHMQ99qNLzEYF1B',
+    photoUrl: 'https://images.pexels.com/photos/974501/pexels-photo-974501.jpeg?auto=compress&cs=tinysrgb&w=400'
   }
 ];
