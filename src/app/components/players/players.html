@@ -7,7 +7,7 @@
         <input
           type="text"
           class="form-control form-control-sm"
-          placeholder="Ej. Juan, Carlos..."
+          placeholder="Ej. Zach, DeMar..."
           [(ngModel)]="searchTerm"
         />
       </div>
@@ -27,14 +27,25 @@
         </select>
       </div>
 
-   
+      
     </div>
   </div>
 
   <!-- Grid de jugadores -->
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
     <div class="col" *ngFor="let player of players | playerFilter:searchTerm:positionFilter">
-      <div class="card player-card h-100">
+      <div
+        class="card player-card h-100"
+        [ngClass]="{ 'selected': isSelected(player) }"
+        [ngStyle]="
+          isSelected(player)
+            ? {
+                'border': '3px solid #d4001f',
+                'background-color': '#ffe5ea'
+              }
+            : {}
+        "
+      >
         <div class="player-card-image">
           <img
             [src]="player.photoUrl"

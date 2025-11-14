@@ -18,9 +18,8 @@ import { Player } from './data/players';
   styleUrl: './app.scss'
 })
 export class App {
-  title = 'EQUIPO BASKET';
-
   currentPage: 'home' | 'players' = 'home';
+
   selectedPlayer?: Player;
 
   goTo(page: 'home' | 'players') {
