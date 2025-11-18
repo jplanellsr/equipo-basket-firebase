@@ -1,0 +1,47 @@
+<div class="media-card">
+  <div *ngIf="player; else noPlayer">
+    <h3 class="media-title">Multimedia</h3>
+    <p class="media-subtitle">
+      Vídeo de <strong>{{ player.nombre }} {{ player.apellidos }}</strong>
+    </p>
+
+    <!-- Si hay vídeo configurado -->
+    <ng-container *ngIf="videoId && thumbnailUrl && safeEmbedUrl; else noVideo">
+      <!-- Estado 1: miniatura con botón de play -->
+      <div
+        class="video-thumbnail-wrapper"
+        *ngIf="!isPlaying"
+        (click)="startVideo()"
+      >
+        <img
+          [src]="thumbnailUrl"
+          [alt]="'Vídeo de ' + player.nombre"
+          class="video-thumbnail"
+        />
+        <div class="video-play-overlay">
+          <div class="play-button">&#9658;</div>
+        </div>
+      </div>
+
+      <!-- Estado 2: iframe reproduciendo -->
+      <div class="video-iframe-wrapper" *ngIf="isPlaying">
+        <iframe
+          [src]="safeEmbedUrl"
+          width="100%"
+          height="230"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </ng-container>
+  </div>
+
+  <ng-template #noPlayer>
+    <p>Selecciona un jugador para ver contenido multimedia.</p>
+  </ng-template>
+
+  <ng-template #noVideo>
+    <p>No hay vídeo disponible para este jugador.</p>
+  </ng-template>
+</div>

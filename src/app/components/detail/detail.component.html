@@ -1,0 +1,118 @@
+<div class="detail-card">
+  <!-- Si hay jugador o estamos creando uno nuevo -->
+  <ng-container *ngIf="player || editMode; else noPlayer">
+    <!-- Modo lectura -->
+    <div *ngIf="!editMode && player">
+      <img
+        *ngIf="player.photoUrl"
+        [src]="player.photoUrl"
+        [alt]="player.nombre"
+        class="detail-photo mb-2"
+      />
+
+      <p><strong>Nombre:</strong> {{ player.nombre }} {{ player.apellidos }}</p>
+      <p><strong>Posición:</strong> {{ player.posicion }}</p>
+      <p><strong>Edad:</strong> {{ player.edad }} años</p>
+      <p><strong>Altura:</strong> {{ player.altura }} cm</p>
+
+      <button class="btn btn-sm btn-outline-primary mt-2" (click)="enableEdit()">
+        Editar
+      </button>
+    </div>
+
+    <!-- Modo edición -->
+    <form *ngIf="editMode && editable" (ngSubmit)="save()">
+      <div class="mb-2">
+        <label class="form-label">Nombre</label>
+        <input
+          class="form-control form-control-sm"
+          [(ngModel)]="editable.nombre"
+          name="nombre"
+          required
+        />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">Apellidos</label>
+        <input
+          class="form-control form-control-sm"
+          [(ngModel)]="editable.apellidos"
+          name="apellidos"
+          required
+        />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">Posición</label>
+        <input
+          class="form-control form-control-sm"
+          [(ngModel)]="editable.posicion"
+          name="posicion"
+          required
+        />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">Edad</label>
+        <input
+          type="number"
+          class="form-control form-control-sm"
+          [(ngModel)]="editable.edad"
+          name="edad"
+          required
+        />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">Altura (cm)</label>
+        <input
+          type="number"
+          class="form-control form-control-sm"
+          [(ngModel)]="editable.altura"
+          name="altura"
+          required
+        />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">URL foto</label>
+        <input
+          class="form-control form-control-sm"
+          [(ngModel)]="editable.photoUrl"
+          name="photoUrl"
+        />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label">URL vídeo (YouTube)</label>
+        <input
+          class="form-control form-control-sm"
+          [(ngModel)]="editable.videoUrl"
+          name="videoUrl"
+        />
+      </div>
+
+      <div class="mt-3 d-flex gap-2">
+        <button
+          type="submit"
+          class="btn btn-sm btn-primary"
+          [disabled]="saving"
+        >
+          {{ saving ? 'Guardando...' : 'Guardar' }}
+        </button>
+        <button
+          type="button"
+          class="btn btn-sm btn-secondary"
+          (click)="cancel()"
+          [disabled]="saving"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-template #noPlayer>
+    <p>Selecciona un jugador o pulsa "Nuevo jugador" para crear uno.</p>
+  </ng-template>
+</div>
