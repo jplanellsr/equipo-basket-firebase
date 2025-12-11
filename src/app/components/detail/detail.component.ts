@@ -53,7 +53,7 @@ export class DetailComponent implements OnChanges {
         this.editable.id = newId;
       }
 
-      // 🔥 AQUÍ sincronizamos el objeto original que ve la lista
+      // AQUÍ sincronizamos el objeto original que ve la lista
       if (this.player && this.editable) {
         Object.assign(this.player, this.editable);
       } else {
